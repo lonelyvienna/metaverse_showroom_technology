@@ -1,0 +1,81 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "7c8d61d1-d94c-4eb5-9b11-178ca7190396",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "99c68": {
+      "importer": "gltf-animation",
+      "uuid": "7c8d61d1-d94c-4eb5-9b11-178ca7190396@99c68",
+      "displayName": "",
+      "id": "99c68",
+      "name": "WomanDance0.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 5.199999809265137
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "3ecd9": {
+      "importer": "gltf-scene",
+      "uuid": "7c8d61d1-d94c-4eb5-9b11-178ca7190396@3ecd9",
+      "displayName": "",
+      "id": "3ecd9",
+      "name": "WomanDance0.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 5.199999809265137,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WomanDance0",
+            "from": 0,
+            "to": 5.199999809265137,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "7c8d61d1-d94c-4eb5-9b11-178ca7190396@3ecd9",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "7c8d61d1-d94c-4eb5-9b11-178ca7190396@3ecd9"
+      ]
+    }
+  }
+}

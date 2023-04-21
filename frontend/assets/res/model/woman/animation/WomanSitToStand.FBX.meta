@@ -1,0 +1,83 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b47d4f02-d233-4e2d-945c-430daa0dbe44",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "daf4e": {
+      "importer": "gltf-animation",
+      "uuid": "b47d4f02-d233-4e2d-945c-430daa0dbe44@daf4e",
+      "displayName": "",
+      "id": "daf4e",
+      "name": "WomanSitToStand.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.433333333333333
+        },
+        "events": [],
+        "speed": 1.5
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "a0ad1": {
+      "importer": "gltf-scene",
+      "uuid": "b47d4f02-d233-4e2d-945c-430daa0dbe44@a0ad1",
+      "displayName": "",
+      "id": "a0ad1",
+      "name": "WomanSitToStand.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 3.3333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WomanSitToStand",
+            "from": 0,
+            "to": 2.433333333333333,
+            "wrapMode": 2,
+            "speed": 1.5
+          }
+        ]
+      }
+    ],
+    "redirect": "b47d4f02-d233-4e2d-945c-430daa0dbe44@a0ad1",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "b47d4f02-d233-4e2d-945c-430daa0dbe44@a0ad1"
+      ]
+    }
+  }
+}

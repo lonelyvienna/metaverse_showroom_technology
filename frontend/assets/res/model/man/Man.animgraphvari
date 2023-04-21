@@ -1,0 +1,104 @@
+[
+  {
+    "__type__": "cc.animation.AnimationGraphVariant",
+    "_name": "",
+    "_objFlags": 0,
+    "_native": "",
+    "_graph": {
+      "__uuid__": "c75620cd-8b41-401f-8eba-6a8681de9fb2",
+      "__expectedType__": "cc.animation.AnimationGraph"
+    },
+    "_clipOverrides": {
+      "__id__": 1
+    }
+  },
+  {
+    "__type__": "cc.animation.ClipOverrideMap",
+    "_entries": [
+      {
+        "__id__": 2
+      },
+      {
+        "__id__": 3
+      },
+      {
+        "__id__": 4
+      },
+      {
+        "__id__": 5
+      },
+      {
+        "__id__": 6
+      },
+      {
+        "__id__": 7
+      }
+    ]
+  },
+  {
+    "__type__": "cc.animation.ClipOverrideEntry",
+    "original": {
+      "__uuid__": "41ab9661-f2b3-4ebd-954b-e2b1df390410@5cb89",
+      "__expectedType__": "cc.AnimationClip"
+    },
+    "substitution": {
+      "__uuid__": "e3747f7a-7e9d-435f-8268-32be199c0c79@60cee",
+      "__expectedType__": "cc.AnimationClip"
+    }
+  },
+  {
+    "__type__": "cc.animation.ClipOverrideEntry",
+    "original": {
+      "__uuid__": "7c8d61d1-d94c-4eb5-9b11-178ca7190396@99c68",
+      "__expectedType__": "cc.AnimationClip"
+    },
+    "substitution": {
+      "__uuid__": "1403939d-725b-4df9-9cc8-8a750c1fb5d8@c94b6",
+      "__expectedType__": "cc.AnimationClip"
+    }
+  },
+  {
+    "__type__": "cc.animation.ClipOverrideEntry",
+    "original": {
+      "__uuid__": "b615534f-7a30-4c46-b643-52597c98476d@9fdab",
+      "__expectedType__": "cc.AnimationClip"
+    },
+    "substitution": {
+      "__uuid__": "9406acd4-f1f4-41d1-9bfc-0ae3b266c89b@91e87",
+      "__expectedType__": "cc.AnimationClip"
+    }
+  },
+  {
+    "__type__": "cc.animation.ClipOverrideEntry",
+    "original": {
+      "__uuid__": "b47d4f02-d233-4e2d-945c-430daa0dbe44@daf4e",
+      "__expectedType__": "cc.AnimationClip"
+    },
+    "substitution": {
+      "__uuid__": "1554d932-6ece-4e30-800b-4a7611aa0667@8145c",
+      "__expectedType__": "cc.AnimationClip"
+    }
+  },
+  {
+    "__type__": "cc.animation.ClipOverrideEntry",
+    "original": {
+      "__uuid__": "5a088141-a5d9-4ea5-a294-55ccea689b8c@0c5cb",
+      "__expectedType__": "cc.AnimationClip"
+    },
+    "substitution": {
+      "__uuid__": "80943529-c862-4439-ad07-611fd71f7684@a557f",
+      "__expectedType__": "cc.AnimationClip"
+    }
+  },
+  {
+    "__type__": "cc.animation.ClipOverrideEntry",
+    "original": {
+      "__uuid__": "4cf14dfd-8419-419f-ad3b-bd7fd6e6ca4d@f2fa5",
+      "__expectedType__": "cc.AnimationClip"
+    },
+    "substitution": {
+      "__uuid__": "b5c23987-bf90-4d61-977e-c3a21aa1b326@8420c",
+      "__expectedType__": "cc.AnimationClip"
+    }
+  }
+]

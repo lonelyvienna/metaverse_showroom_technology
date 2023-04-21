@@ -1,0 +1,196 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce",
+  "files": [],
+  "subMetas": {
+    "ef4a8": {
+      "importer": "gltf-mesh",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@ef4a8",
+      "displayName": "",
+      "id": "ef4a8",
+      "name": "chair_002_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a3823": {
+      "importer": "gltf-mesh",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@a3823",
+      "displayName": "",
+      "id": "a3823",
+      "name": "chair_003_Material0.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "340b0": {
+      "importer": "gltf-mesh",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@340b0",
+      "displayName": "",
+      "id": "340b0",
+      "name": "chair_006_Material0.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f0b30": {
+      "importer": "gltf-mesh",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@f0b30",
+      "displayName": "",
+      "id": "f0b30",
+      "name": "chair_007_Material0.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ec1b9": {
+      "importer": "gltf-embeded-image",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@ec1b9",
+      "displayName": "",
+      "id": "ec1b9",
+      "name": "贴图 #214.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9d9d0": {
+      "importer": "texture",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@9d9d0",
+      "displayName": "",
+      "id": "9d9d0",
+      "name": "贴图 #214.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@ec1b9"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cfbea": {
+      "importer": "gltf-material",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@cfbea",
+      "displayName": "",
+      "id": "cfbea",
+      "name": "Latex_Paint_Wite.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8b438": {
+      "importer": "gltf-material",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@8b438",
+      "displayName": "",
+      "id": "8b438",
+      "name": "Mat3d66-579957-4-286.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "843c9": {
+      "importer": "gltf-scene",
+      "uuid": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@843c9",
+      "displayName": "",
+      "id": "843c9",
+      "name": "chair_0404.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "贴图 #214",
+        "uri": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@ec1b9"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@843c9",
+    "assetFinder": {
+      "meshes": [
+        "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@ef4a8",
+        "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@a3823",
+        "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@340b0",
+        "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@f0b30"
+      ],
+      "skeletons": [],
+      "textures": [
+        "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@9d9d0"
+      ],
+      "materials": [
+        "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@cfbea",
+        "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@8b438"
+      ],
+      "scenes": [
+        "136bae0a-0ccb-4be1-b1e6-2ff89ff8e4ce@843c9"
+      ]
+    }
+  }
+}

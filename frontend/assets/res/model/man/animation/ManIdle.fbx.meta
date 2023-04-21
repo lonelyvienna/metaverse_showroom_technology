@@ -1,0 +1,81 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "80943529-c862-4439-ad07-611fd71f7684",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "a557f": {
+      "importer": "gltf-animation",
+      "uuid": "80943529-c862-4439-ad07-611fd71f7684@a557f",
+      "displayName": "",
+      "id": "a557f",
+      "name": "ManIdle.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 8.333333015441895
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "6f9b0": {
+      "importer": "gltf-scene",
+      "uuid": "80943529-c862-4439-ad07-611fd71f7684@6f9b0",
+      "displayName": "",
+      "id": "6f9b0",
+      "name": "ManIdle.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 8.333333015441895,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "ManIdle",
+            "from": 0,
+            "to": 8.333333015441895,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "80943529-c862-4439-ad07-611fd71f7684@6f9b0",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "80943529-c862-4439-ad07-611fd71f7684@6f9b0"
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "41ab9661-f2b3-4ebd-954b-e2b1df390410",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "5cb89": {
+      "importer": "gltf-animation",
+      "uuid": "41ab9661-f2b3-4ebd-954b-e2b1df390410@5cb89",
+      "displayName": "",
+      "id": "5cb89",
+      "name": "WomanSitting.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.3333332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "d5407": {
+      "importer": "gltf-scene",
+      "uuid": "41ab9661-f2b3-4ebd-954b-e2b1df390410@d5407",
+      "displayName": "",
+      "id": "d5407",
+      "name": "WomanSitting.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 3.3333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WomanSitting",
+            "from": 0,
+            "to": 3.3333332538604736,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "41ab9661-f2b3-4ebd-954b-e2b1df390410@d5407",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "41ab9661-f2b3-4ebd-954b-e2b1df390410@d5407"
+      ]
+    }
+  }
+}

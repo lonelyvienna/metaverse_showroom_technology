@@ -1,0 +1,27 @@
+{
+  "name": "multiplayer-backend",
+  "version": "0.1.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev:match": "tsrpc-cli dev --entry src/matchServer.ts",
+    "dev:room": "tsrpc-cli dev --entry src/roomServer.ts",
+    "dev:room2": "cross-env PORT=3002 tsrpc-cli dev --entry src/roomServer.ts",
+    "doc": "tsrpc-cli doc",
+    "test": "mocha test/**/*.test.ts",
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^15.14.9",
+    "@types/uuid": "^9.0.1",
+    "mocha": "^9.2.2",
+    "onchange": "^7.1.0",
+    "ts-node": "^10.9.1",
+    "tsrpc-cli": "^2.4.5",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "tsrpc": "^3.4.12"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "339af089-117d-4189-8458-e852d6a9d6c4",
+  "files": [],
+  "subMetas": {
+    "07bb1": {
+      "importer": "gltf-mesh",
+      "uuid": "339af089-117d-4189-8458-e852d6a9d6c4@07bb1",
+      "displayName": "",
+      "id": "07bb1",
+      "name": "Woman_0329.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "339af089-117d-4189-8458-e852d6a9d6c4@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 52
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a274c": {
+      "importer": "gltf-scene",
+      "uuid": "339af089-117d-4189-8458-e852d6a9d6c4@a274c",
+      "displayName": "",
+      "id": "a274c",
+      "name": "Woman.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "339af089-117d-4189-8458-e852d6a9d6c4@a274c",
+    "assetFinder": {
+      "meshes": [
+        "339af089-117d-4189-8458-e852d6a9d6c4@07bb1"
+      ],
+      "skeletons": [
+        "339af089-117d-4189-8458-e852d6a9d6c4@438fe"
+      ],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "339af089-117d-4189-8458-e852d6a9d6c4@a274c"
+      ]
+    }
+  }
+}

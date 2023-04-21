@@ -1,0 +1,81 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "5a088141-a5d9-4ea5-a294-55ccea689b8c",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "92909": {
+      "importer": "gltf-scene",
+      "uuid": "5a088141-a5d9-4ea5-a294-55ccea689b8c@92909",
+      "displayName": "",
+      "id": "92909",
+      "name": "WomanIdle.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0c5cb": {
+      "importer": "gltf-animation",
+      "uuid": "5a088141-a5d9-4ea5-a294-55ccea689b8c@0c5cb",
+      "displayName": "",
+      "id": "0c5cb",
+      "name": "WomanIdle.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 8.333333015441895
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 8.333333015441895,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WomanIdle",
+            "from": 0,
+            "to": 8.333333015441895,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "5a088141-a5d9-4ea5-a294-55ccea689b8c@92909",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "5a088141-a5d9-4ea5-a294-55ccea689b8c@92909"
+      ]
+    }
+  }
+}

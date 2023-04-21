@@ -1,0 +1,12 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "853a337f-3580-45e8-9e66-4ea6722e5a9d",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/src/joystick.js",
+    "simulateGlobals": []
+  }
+}

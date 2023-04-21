@@ -1,0 +1,81 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "9406acd4-f1f4-41d1-9bfc-0ae3b266c89b",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "91e87": {
+      "importer": "gltf-animation",
+      "uuid": "9406acd4-f1f4-41d1-9bfc-0ae3b266c89b@91e87",
+      "displayName": "",
+      "id": "91e87",
+      "name": "ManDance1.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 16.83333396911621
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "179af": {
+      "importer": "gltf-scene",
+      "uuid": "9406acd4-f1f4-41d1-9bfc-0ae3b266c89b@179af",
+      "displayName": "",
+      "id": "179af",
+      "name": "ManDance1.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 16.83333396911621,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "ManDance1",
+            "from": 0,
+            "to": 16.83333396911621,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "9406acd4-f1f4-41d1-9bfc-0ae3b266c89b@179af",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "9406acd4-f1f4-41d1-9bfc-0ae3b266c89b@179af"
+      ]
+    }
+  }
+}

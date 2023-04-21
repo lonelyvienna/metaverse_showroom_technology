@@ -1,0 +1,18 @@
+{
+  "_sourceId": "c30b28da-749e-479b-bcb6-cecd8d7be9e3",
+  "creator": {
+    "version": "3.7.1",
+    "registry": {
+      "remote": {}
+    },
+    "dependencies": {}
+  },
+  "name": "fftest",
+  "uuid": "314af97f-7e64-451e-9d2f-3a72d6055ad9",
+  "version": "3.6.2",
+  "dependencies": {
+    "k8w-extend-native": "^1.4.6",
+    "tsrpc-browser": "^3.4.11",
+    "tsrpc-miniapp": "^3.4.11"
+  }
+}

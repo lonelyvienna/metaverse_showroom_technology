@@ -1,0 +1,141 @@
+﻿<?php
+include 'Wx.php';
+$wx = new Wx();
+$getData = $_GET;
+
+if(isset($getData['openid'])){
+
+//    $getSignPackage = $wx->getSignPackage();
+
+}else{
+    if(isset($getData['code'])){
+//
+        $code = $getData['code'];
+
+        $result = $wx->getOpenId($code);
+
+        $user = $wx->getUserInfo($result['access_token'], $result['openid']);
+
+        $url = sprintf("screen.qdmedia.cc/metaverse/metaverse_showroom?openid=%s&nickname=%s&header=%s", $user['openid'], $user['nickname'], $user['headimgurl']);
+
+        header("Location: http://$url");
+    }else{
+
+        $url = $wx->createOauthUrlForCode("http://screen.qdmedia.cc/metaverse/metaverse_showroom");
+
+        header("Location: $url");
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>元宇宙展厅</title>
+
+  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+  <meta name="viewport"
+        content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"/>
+
+  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- force webkit on 360 -->
+  <meta name="renderer" content="webkit"/>
+  <meta name="force-rendering" content="webkit"/>
+  <!-- force edge on IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- force full screen on some browser -->
+  <meta name="full-screen" content="yes"/>
+  <meta name="x5-fullscreen" content="true"/>
+  <meta name="360-fullscreen" content="true"/>
+
+  <!--fix fireball/issues/3568 -->
+  <!--<meta name="browsermode" content="application">-->
+  <meta name="x5-page-mode" content="app">
+
+  <!--<link rel="apple-touch-icon" href=".png" />-->
+  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+  <link rel="stylesheet" type="text/css" href="<%= cssUrl %>"/>
+
+</head>
+<body style="background-color: #fff;">
+  <div id="GameDiv" cc_exact_fit_screen="true">
+      <div id="Cocos3dGameContainer">
+        <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+      </div>
+    </div>
+           <div id="splash">
+   	<img src="./logo.png"
+     	style="position: absolute;left: 50%;top: 40%;transform: translate(-50%, 0);width: 40vw">
+           </div>
+  <%- include(cocosTemplate, {}) %>
+
+<?php
+include 'Wx.php';
+$wx = new Wx();
+$getData = $_GET;
+
+if(isset($getData['openid'])){
+
+    $getSignPackage = $wx->getSignPackage();
+
+}else{
+    if(isset($getData['code'])){
+//
+        $code = $getData['code'];
+
+        $result = $wx->getOpenId($code);
+
+        $user = $wx->getUserInfo($result['access_token'], $result['openid']);
+
+        $url = sprintf("screen.qdmedia.cc/metaverse/metaverse_showroom?openid=%s&nickname=%s&header=%s", $user['openid'], $user['nickname'], $user['headimgurl']);
+
+        header("Location: http://$url");
+    }else{
+
+        $url = $wx->createOauthUrlForCode("http://screen.qdmedia.cc/metaverse/metaverse_showroom");
+
+        header("Location: $url");
+    }
+}
+?>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+wx.config({
+  debug: false,
+  appId: "<?php echo $getSignPackage['appId'] ?>",
+  timestamp: "<?php echo $getSignPackage['timestamp'] ?>",
+  nonceStr: "<?php echo $getSignPackage['nonceStr'] ?>",
+  signature: "<?php echo $getSignPackage['signature'] ?>",
+  jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'chooseImage', 'getLocalImgData', 'uploadImage', 'downloadImage']
+});
+wx.ready(function () {
+  window.wxReady = true;
+  var shareData = {
+	title: '元宇宙展厅',
+	desc: '元宇宙展厅',
+	//link: 'http://screen.qdmedia.cc/metaverse/metaverse_showroom',
+	link: 'http://screen.qdmedia.cc/metaverse/metaverse_showroom',
+	imgUrl: 'http://h5files.oss-cn-hangzhou.aliyuncs.com/fengcai/icon.jpg',
+	success: function () {
+
+	  console.log("分享成功");
+
+	  //cc.director.GlobalEvent.sendEvent("share", "ShareOK");
+	},
+  };
+  wx.onMenuShareAppMessage(shareData);
+  wx.onMenuShareTimeline(shareData);
+});
+</script>
+
+</body>
+</html>

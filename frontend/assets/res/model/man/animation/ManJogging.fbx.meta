@@ -1,0 +1,81 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b5c23987-bf90-4d61-977e-c3a21aa1b326",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "8420c": {
+      "importer": "gltf-animation",
+      "uuid": "b5c23987-bf90-4d61-977e-c3a21aa1b326@8420c",
+      "displayName": "",
+      "id": "8420c",
+      "name": "ManJogging.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.699999988079071
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "aa651": {
+      "importer": "gltf-scene",
+      "uuid": "b5c23987-bf90-4d61-977e-c3a21aa1b326@aa651",
+      "displayName": "",
+      "id": "aa651",
+      "name": "ManJogging.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 0.699999988079071,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "ManJogging",
+            "from": 0,
+            "to": 0.699999988079071,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "b5c23987-bf90-4d61-977e-c3a21aa1b326@aa651",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "b5c23987-bf90-4d61-977e-c3a21aa1b326@aa651"
+      ]
+    }
+  }
+}

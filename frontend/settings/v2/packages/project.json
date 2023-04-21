@@ -1,0 +1,44 @@
+{
+  "general": {
+    "designResolution": {
+      "width": 750,
+      "height": 1448,
+      "fitHeight": true,
+      "fitWidth": false
+    }
+  },
+  "__version__": "1.0.4",
+  "fbx": {
+    "legacyFbxImporter": {
+      "visible": true
+    }
+  },
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "Player"
+      },
+      {
+        "index": 2,
+        "name": "Chair"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 3,
+      "1": 5,
+      "2": 2
+    }
+  },
+  "layer": [
+    {
+      "name": "UI_RT",
+      "value": 1
+    },
+    {
+      "name": "drawNode",
+      "value": 2
+    }
+  ],
+  "custom_joint_texture_layouts": []
+}

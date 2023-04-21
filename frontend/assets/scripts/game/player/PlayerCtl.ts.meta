@@ -1,0 +1,12 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "0e1e38de-e9d4-4587-9ddc-d98993e2c8ec",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/src/PlayerCtl.js",
+    "simulateGlobals": []
+  }
+}

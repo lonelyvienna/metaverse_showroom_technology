@@ -1,0 +1,81 @@
+{
+  "ver": "2.3.3",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "64604e1e-8902-4cd0-92f2-081745bf0597",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "d9b48": {
+      "importer": "gltf-animation",
+      "uuid": "64604e1e-8902-4cd0-92f2-081745bf0597@d9b48",
+      "displayName": "",
+      "id": "d9b48",
+      "name": "WomanJogging.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.566666603088379
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "7f0b5": {
+      "importer": "gltf-scene",
+      "uuid": "64604e1e-8902-4cd0-92f2-081745bf0597@7f0b5",
+      "displayName": "",
+      "id": "7f0b5",
+      "name": "WomanJogging.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 2.566666603088379,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "WomanJogging",
+            "from": 0,
+            "to": 2.566666603088379,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "64604e1e-8902-4cd0-92f2-081745bf0597@7f0b5",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "64604e1e-8902-4cd0-92f2-081745bf0597@7f0b5"
+      ]
+    }
+  }
+}
