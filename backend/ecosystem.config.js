@@ -5,19 +5,19 @@ module.exports = {
    */
   apps : [
     {
-      name      : 'showroomOnline-match-server',
+      name      : 'technology-showroom-match-server',
       script    : 'matchServer.js',
       env: {
-        PORT: '10511'
+        PORT: '10513'
       }
     },
     {
-      name      : 'showroomOnline-room-server-1',
+      name      : 'technology-showroom-room-server-1',
       script    : 'roomServer.js',
       env: {
-        PORT: '10503',
-        MATCH_SERVER_URL: 'http://120.25.74.1:10511',
-        THIS_SERVER_URL: 'ws://120.25.74.1:10503'
+        PORT: '10507',
+        MATCH_SERVER_URL: 'http://120.25.74.1:10513',
+        THIS_SERVER_URL: 'ws://120.25.74.1:10507'
       }
     },
     // {

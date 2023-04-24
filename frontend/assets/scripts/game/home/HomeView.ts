@@ -49,6 +49,8 @@ export default class HomeView extends BaseView {
 
     public static readonly danceClick = "danceClick";
 
+    public static readonly reconnection = "reconnection";
+
     @property(Button)
     public dance: Button = null;
 
@@ -179,7 +181,8 @@ export default class HomeView extends BaseView {
     private _nearByPlayer: UserInfo[] = [];
     private danceType: number = 0;
 
-    private offlineTitle: boolean = false;
+    private offlineTitle: boolean = false;  //离线提醒
+    private reconnectionNum: number = 0;  //离线重连次数
 
     public init(data?: any): void {
     }
@@ -243,13 +246,18 @@ export default class HomeView extends BaseView {
         this.gameManager.client.listenMsg('serverMsg/UserJoin', v => {
 
             EventMgr.getInstance().sendListener("ChatMsg", { "msg": "欢迎 " + v.user.nickName + " 进入展厅" });
+
+            if (v.user.openId == this.gameManager.selfUserInfo.openId) {
+
+                this.offlineTitle = false;
+            }
         });
 
         // this.EnterGameScene(data.roomId); //进入游戏
 
-        this.playMapLive();
+        // this.playMapLive();
 
-        this.playMoveScreenLive();
+        // this.playMoveScreenLive();
     }
 
     onClose() {
@@ -382,7 +390,21 @@ export default class HomeView extends BaseView {
 
         if (!this.gameManager.client.isConnected && this.gameManager.selfUserInfo != null && !this.offlineTitle) {
 
-            this.onOpenTitlePopu("提示", "服务器断开连接!");
+            if (this.reconnectionNum >= 5) {
+
+                this.onOpenTitlePopu("提示", "重连次数过多，请重新进入！",);
+
+                this.offlineTitle = true;
+
+                return;
+            }
+
+            UIAPI.getInstance().showMessegeBox("提示", "服务器断开连接，是否重新连接？", "取消", "确认", () => {
+
+                this.sendEvent(HomeView.reconnection);
+
+                this.reconnectionNum++;
+            });
 
             this.offlineTitle = true;
 

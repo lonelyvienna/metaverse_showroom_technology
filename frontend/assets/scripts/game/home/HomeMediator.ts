@@ -132,6 +132,13 @@ export default class HomeMediator extends BaseMediator {
             this.view.playerDance();
 
         }, this);
+
+        //重连
+        this.bindEvent(HomeView.reconnection, () => {
+
+            this.view.EnterGameScene(this.matchRoomData.roomId);
+
+        }, this);
     }
 
     /**

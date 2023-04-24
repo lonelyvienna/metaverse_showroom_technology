@@ -50,8 +50,8 @@ class Room {
             userInfo: userInfo,
             // 初始位置随机
             pos: {
-                x: Math.random() * 11 - 21,
-                y: Math.random() * 10 - 15
+                x: Math.random() * 9 - 4,
+                y: Math.random() * 2 + 11.5
             }
         };
         this.applyInput(input);
