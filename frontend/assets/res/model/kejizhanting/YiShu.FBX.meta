@@ -444,6 +444,98 @@
       "scenes": [
         "43d19a3a-2ea9-4847-9f69-3a81119a9f2a@63d7f"
       ]
+    },
+    "materials": {
+      "43d19a3a-2ea9-4847-9f69-3a81119a9f2a@bb1c2": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 1,
+        "_defines": [
+          {
+            "DCC_APP_NAME": 1,
+            "USE_ALBEDO_MAP": true,
+            "USE_TRANSPARENCY_MAP": true,
+            "USE_EMISSIVE_MAP": true,
+            "USE_EMISSIVESCALE_MAP": true
+          },
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainTexture": {
+              "__uuid__": "43d19a3a-2ea9-4847-9f69-3a81119a9f2a@66d18",
+              "__expectedType__": "cc.Texture2D"
+            },
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 202,
+              "g": 202,
+              "b": 202,
+              "a": 255
+            },
+            "emissiveMap": {
+              "__uuid__": "43d19a3a-2ea9-4847-9f69-3a81119a9f2a@4b596",
+              "__expectedType__": "cc.Texture2D"
+            },
+            "emissiveScale": 0,
+            "emissiveScaleMap": {
+              "__uuid__": "43d19a3a-2ea9-4847-9f69-3a81119a9f2a@4b596",
+              "__expectedType__": "cc.Texture2D"
+            },
+            "shininessExponent": 2,
+            "specularColor": {
+              "__type__": "cc.Color",
+              "r": 243,
+              "g": 243,
+              "b": 243,
+              "a": 255
+            },
+            "specularFactor": 0,
+            "transparencyMap": {
+              "__uuid__": "43d19a3a-2ea9-4847-9f69-3a81119a9f2a@6a688",
+              "__expectedType__": "cc.Texture2D"
+            }
+          },
+          {},
+          {}
+        ]
+      }
     }
   }
 }

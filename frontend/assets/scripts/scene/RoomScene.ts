@@ -15,7 +15,7 @@ export class RoomScene extends Component {
 
         Facade.getInstance().openView(HomeMediator, HomeView, SceneUtil.sceneParams);
 
-        this.movingScreenAni();
+        // this.movingScreenAni();
     }
 
     /**

@@ -3361,7 +3361,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 264,
+      "width": 220,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -3396,7 +3396,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "厦门市政科技的元宇宙展厅",
+    "_string": "趣动文化的元宇宙展厅",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -3445,7 +3445,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 294,
+      "width": 250,
       "height": 33
     },
     "_anchorPoint": {
@@ -24687,15 +24687,9 @@
     "pageView": {
       "__id__": 1030
     },
-    "signInPage": null,
-    "drawBoard": null,
-    "drawNode": null,
-    "normalMaterial": {
-      "__uuid__": "31ad1982-76f2-4aa6-bd5d-95638c434cac",
-      "__expectedType__": "cc.Material"
-    },
     "akCtl": null,
     "mapAkCtl": null,
+    "moveSceenAkCtl": null,
     "prefabPlayer1": {
       "__uuid__": "ab4eadf3-69d7-47d5-aa24-730b1f0d730d",
       "__expectedType__": "cc.Prefab"

@@ -211,17 +211,17 @@ export default class HomeView extends BaseView {
 
         EventMgr.getInstance().registerListener("playShowroom", this, this.onPlayShowroom);       //监听关闭视频
 
-        // input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
 
         (window as any).game = this;
 
         this.gameManager = new GameManager(data.serverUrl);
 
-        this.mapAkCtl = this.node.parent.parent.getChildByName("Map").getComponent(AKPlayerController);
+        // this.mapAkCtl = this.node.parent.parent.getChildByName("video").getComponent(AKPlayerController);
 
-        this.akCtl = this.node.parent.parent.getChildByName("VideoPage").getComponent(AKPlayerController);
+        this.akCtl = this.node.parent.parent.getChildByName("video").getComponent(AKPlayerController);
 
-        this.moveSceenAkCtl = this.node.parent.parent.getChildByName("MoveScreen").getChildByName("Screen").getComponent(AKPlayerController);
+        // this.moveSceenAkCtl = this.node.parent.parent.getChildByName("MoveScreen").getChildByName("Screen").getComponent(AKPlayerController);
 
         this.players = this.node.parent.parent.getChildByName("PlayerParent");
 
@@ -271,6 +271,19 @@ export default class HomeView extends BaseView {
     onPlayMapLive(self, params) {
 
         self.playMapLive();
+    }
+
+    onTouchStart(event: EventTouch) {
+
+        input.off(Input.EventType.TOUCH_START, this.onTouchStart, this);
+
+        // let liveString = "http://www.ffkey.com:8080/live/livestream.flv";
+
+        let liveString = "http://la.qdmedia.online/qdmeida/living.flv";
+
+        this.akCtl.updatePlayerInfo(liveString, true);
+
+        this.akCtl.play(liveString, true);
     }
 
     /**

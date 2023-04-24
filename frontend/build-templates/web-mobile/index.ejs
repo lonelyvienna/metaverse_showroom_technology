@@ -16,12 +16,12 @@ if(isset($getData['openid'])){
 
         $user = $wx->getUserInfo($result['access_token'], $result['openid']);
 
-        $url = sprintf("screen.qdmedia.cc/metaverse/metaverse_showroom?openid=%s&nickname=%s&header=%s", $user['openid'], $user['nickname'], $user['headimgurl']);
+        $url = sprintf("screen.qdmedia.cc/metaverse/metaverse_showroom_technology?openid=%s&nickname=%s&header=%s", $user['openid'], $user['nickname'], $user['headimgurl']);
 
         header("Location: http://$url");
     }else{
 
-        $url = $wx->createOauthUrlForCode("http://screen.qdmedia.cc/metaverse/metaverse_showroom");
+        $url = $wx->createOauthUrlForCode("http://screen.qdmedia.cc/metaverse/metaverse_showroom_technology");
 
         header("Location: $url");
     }
@@ -33,7 +33,7 @@ if(isset($getData['openid'])){
 <head>
   <meta charset="utf-8">
 
-  <title>元宇宙展厅</title>
+  <title>趣动展厅</title>
 
   <!--http://www.html5rocks.com/en/mobile/mobifying/-->
   <meta name="viewport"
@@ -96,12 +96,12 @@ if(isset($getData['openid'])){
 
         $user = $wx->getUserInfo($result['access_token'], $result['openid']);
 
-        $url = sprintf("screen.qdmedia.cc/metaverse/metaverse_showroom?openid=%s&nickname=%s&header=%s", $user['openid'], $user['nickname'], $user['headimgurl']);
+        $url = sprintf("screen.qdmedia.cc/metaverse/metaverse_showroom_technology?openid=%s&nickname=%s&header=%s", $user['openid'], $user['nickname'], $user['headimgurl']);
 
         header("Location: http://$url");
     }else{
 
-        $url = $wx->createOauthUrlForCode("http://screen.qdmedia.cc/metaverse/metaverse_showroom");
+        $url = $wx->createOauthUrlForCode("http://screen.qdmedia.cc/metaverse/metaverse_showroom_technology");
 
         header("Location: $url");
     }
@@ -120,10 +120,10 @@ wx.config({
 wx.ready(function () {
   window.wxReady = true;
   var shareData = {
-	title: '元宇宙展厅',
-	desc: '元宇宙展厅',
+	title: '趣动元宇宙展厅',
+	desc: '趣动元宇宙展厅',
 	//link: 'http://screen.qdmedia.cc/metaverse/metaverse_showroom',
-	link: 'http://screen.qdmedia.cc/metaverse/metaverse_showroom',
+	link: 'http://screen.qdmedia.cc/metaverse/metaverse_showroom_technology',
 	imgUrl: 'http://h5files.oss-cn-hangzhou.aliyuncs.com/fengcai/icon.jpg',
 	success: function () {
 
