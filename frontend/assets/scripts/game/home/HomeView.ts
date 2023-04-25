@@ -303,11 +303,23 @@ export default class HomeView extends BaseView {
      */
     private joysitckHandle(self, params) {
 
-        if (params.x == 0 || params.y == 0) {
+        if (params.pos.x == 0 || params.pos.y == 0) {
 
             self._selfSpeed = undefined;
 
             self._angle == 0;
+
+            self.gameManager.sendClientInput({
+                type: 'PlayerMove',
+                sport: PlayerStateType.idle,
+                speed: {
+                    x: 0,
+                    y: 0
+                },
+                angle: 0,
+                cameraRotateY: self.camera!.node.eulerAngles.y,
+                dt: 0
+            }, self.gameManager.selfUserInfo);
 
         } else {
 
@@ -428,19 +440,6 @@ export default class HomeView extends BaseView {
                 dt: dt
             }, this.gameManager.selfUserInfo);
 
-        } else {
-
-            this.gameManager.sendClientInput({
-                type: 'PlayerMove',
-                sport: PlayerStateType.idle,
-                speed: {
-                    x: 0,
-                    y: 0
-                },
-                angle: 0,
-                cameraRotateY: this.camera!.node.eulerAngles.y,
-                dt: dt
-            }, this.gameManager.selfUserInfo);
         }
 
         this._updatePlayers();
