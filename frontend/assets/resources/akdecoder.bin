@@ -102,7 +102,6 @@ FFMPEG.postRun = function () {
         remain: 0,
         channels:0,
         videoFrameSize: 0,
-        dataBuffing: false,
         playDone: function() {
             self.postMessage({cmd: "playDone"});
         },
@@ -259,30 +258,21 @@ FFMPEG.postRun = function () {
                         var islast = (this.bufferQueue.length == 0 && speedSampler.isDone());
                         
                         data.decoder.decode(data.payload,data.ts,islast?1:0);
-                    } else if (this.delay > this.videoBufferTime + 1000) {
+                    } else if (this.delay > this.videoBuffer + 1000) {
                         this.dropping = true
                     } else {
-                        let buffing = true;
                         while (this.bufferQueue.length) {
-                            data = this.bufferQueue[0];
-                            let delayTime = this.getDelay(data.ts);
-                            if (delayTime > this.videoBufferTime) {
+                            data = this.bufferQueue[0]
+                            if (this.getDelay(data.ts) > this.videoBuffer) {
                                 this.bufferQueue.shift()
                                 this.ts = data.ts;
                                 var islast = (this.bufferQueue.length == 0 && speedSampler.isDone());
-                                buffing = false;
+                                
                                 data.decoder.decode(data.payload,data.ts,islast?1:0);
                             } else {
-                                if(this.videoBufferTime - delayTime < 1000){
-                                    buffing = false;
-                                }
                                 break
                             }
                         }
-                        if(buffing != this.dataBuffing){
-                            self.postMessage({cmd: "buffing",buffing:buffing});
-                        }
-                        this.dataBuffing = buffing;
                     }
                 }
             }
@@ -434,7 +424,6 @@ FFMPEG.postRun = function () {
             this.startLoop();
             this.startSpeedSampler();
             this.isStream = true;
-            this.dataBuffing = false;
             if(fileSize){
                 this.flvMode = true;
                 this.isStream = false;
@@ -624,8 +613,8 @@ FFMPEG.postRun = function () {
                 }
                 
                 break
-            case "setVideoBufferTime":
-                decoder.videoBufferTime = (msg.time * 1000) | 0
+            case "setVideoBuffer":
+                decoder.videoBuffer = (msg.time * 1000) | 0
                 break
             case "close":
                 decoder.close()

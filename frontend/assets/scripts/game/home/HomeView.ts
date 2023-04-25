@@ -171,9 +171,6 @@ export default class HomeView extends BaseView {
     @property(Node)
     chairs!: Node;  //椅子父节点
 
-    @property(ParticleSystem2D)
-    fireworks!: ParticleSystem2D;  //烟花
-
     public gameManager!: GameManager;
     private _playerInstances: { [playerId: string]: PlayerCtl | undefined } = {};
     private _selfSpeed?: Vec2 = new Vec2(0, 0);
@@ -211,7 +208,7 @@ export default class HomeView extends BaseView {
 
         EventMgr.getInstance().registerListener("playShowroom", this, this.onPlayShowroom);       //监听关闭视频
 
-        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        // input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
 
         (window as any).game = this;
 
@@ -219,9 +216,9 @@ export default class HomeView extends BaseView {
 
         // this.mapAkCtl = this.node.parent.parent.getChildByName("video").getComponent(AKPlayerController);
 
-        this.akCtl = this.node.parent.parent.getChildByName("video").getComponent(AKPlayerController);
+        // this.akCtl = this.node.parent.parent.getChildByName("video").getComponent(AKPlayerController);
 
-        // this.moveSceenAkCtl = this.node.parent.parent.getChildByName("MoveScreen").getChildByName("Screen").getComponent(AKPlayerController);
+        this.moveSceenAkCtl = this.node.parent.parent.getChildByName("video").getComponent(AKPlayerController);
 
         this.players = this.node.parent.parent.getChildByName("PlayerParent");
 
@@ -257,7 +254,7 @@ export default class HomeView extends BaseView {
 
         // this.playMapLive();
 
-        // this.playMoveScreenLive();
+        this.playMoveScreenLive();
     }
 
     onClose() {
@@ -271,19 +268,6 @@ export default class HomeView extends BaseView {
     onPlayMapLive(self, params) {
 
         self.playMapLive();
-    }
-
-    onTouchStart(event: EventTouch) {
-
-        input.off(Input.EventType.TOUCH_START, this.onTouchStart, this);
-
-        // let liveString = "http://www.ffkey.com:8080/live/livestream.flv";
-
-        let liveString = "http://la.qdmedia.online/qdmeida/living.flv";
-
-        this.akCtl.updatePlayerInfo(liveString, true);
-
-        this.akCtl.play(liveString, true);
     }
 
     /**
@@ -309,7 +293,7 @@ export default class HomeView extends BaseView {
 
         this.moveSceenAkCtl.play(liveString, false);
 
-        this.moveSceenAkCtl.hasAudio(false);
+        // this.moveSceenAkCtl.hasAudio(false);
     }
 
     /**
@@ -662,11 +646,11 @@ export default class HomeView extends BaseView {
                 if (this._nearByPlayer.length == 0) {  //之前没人,关闭输入框,打开用户列表,绑定用户(最多4个,其中最左边为自己)
 
                     this.onSwitchPlayerInfo();
-
-                    this.bindPlayerListInfo(playerInfoArr);
-
-                    this._nearByPlayer = playerInfoArr;
                 }
+
+                this.bindPlayerListInfo(playerInfoArr);
+
+                this._nearByPlayer = playerInfoArr;
             }
         }
     }
@@ -1537,16 +1521,6 @@ export default class HomeView extends BaseView {
     onCloseTitlePopu() {
 
         this.titlePopu.active = false;
-    }
-
-    /**
-     * 播放烟花
-     */
-    onOpenFirework() {
-
-        this.fireworks.resetSystem();
-
-        this.scheduleOnce(() => { this.fireworks.stopSystem(); }, 10);
     }
 
     /**

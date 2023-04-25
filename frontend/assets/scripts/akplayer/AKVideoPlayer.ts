@@ -13,7 +13,7 @@ const { ccclass, property, type } = _decorator;
 export class AKVideoPlayer extends Component  {
     
     decodeWorker : ThreadWorker |AKDecoder = null;
-    _opt: Options  = new Options();
+    _opt: Options = null;
     _audioPlayer: AKAudio = null;
     _hasLoaded:boolean = false;
     _event: EventTarget = null;
@@ -31,12 +31,12 @@ export class AKVideoPlayer extends Component  {
     _audioFrameBuffer = [];
     _videoFormat = ePlayerTexture.kVideoRGB;
     _lastVideoPts:number = 0;
-    useWorker:boolean = true;
-
+    useWorker:boolean = false;
     _stats = {
         buf: 0, //ms
         fps: 0,
-        kBps: '',
+        abps: '',
+        vbps: '',
         ts: 0,
         duration:0,
     }
@@ -69,7 +69,7 @@ export class AKVideoPlayer extends Component  {
     }
 
     start() {
-       
+        this._opt = new Options();
         if(this.render2D){
             this.render = this.render2D;
         }else{
@@ -80,23 +80,15 @@ export class AKVideoPlayer extends Component  {
 
     /**
      * 设置最大缓冲时长，单位秒，播放器会自动消除延迟
-     * @param bufferTime 单位 秒
+     * @param buffer 单位 秒
      */
-    setBufferTime(bufferTime:number) {
-        bufferTime = Number(bufferTime)
-        this._opt.videoBufferTime = bufferTime;
-        if(this.decodeWorker){
-            this.decodeWorker.postMessage({
-                cmd: PlayerPostMessage.setVideoBufferTime,
-                time: bufferTime
-            });
-        }
+    setBufferTime(buffer) {
+        buffer = Number(buffer)
+        this.decodeWorker.postMessage({
+            cmd: PlayerPostMessage.setVideoBuffer,
+            time: buffer
+        })
     }
-
-    hasAudio(v:boolean){
-        this._opt.hasAudio = v;
-    }
-
     onLoad(){
 
     }
@@ -298,12 +290,12 @@ export class AKVideoPlayer extends Component  {
         v.onRecv = (res,data) => {
             //@ts-ignore
             const msg = data;
-          //  console.log(msg);
+           
             switch (msg.cmd) {
                 case PlayerCmdType.init:
                    
                     this._opt.debug && console.log('_init');
-                    this.setBufferTime(this._opt.videoBufferTime);
+                    this.setBufferTime(this._opt.videoBuffer);
                     this.decodeWorker.postMessage({
                         cmd: PlayerPostMessage.init,
                         opt: JSON.stringify(this._opt),
@@ -326,7 +318,6 @@ export class AKVideoPlayer extends Component  {
                     this._opt.debug && console.log('_initSize');
                     this.videoWidth = msg.w;
                     this.videoHeight = msg.h;
-                    console.log("video width:",msg.w," height: ",msg.h);
                     this.onInitSize();
                     this.event.emit(PlayerEvent.videoInfo, {w: msg.w, h: msg.h});
                     this.event.emit(PlayerEvent.start);
@@ -399,15 +390,10 @@ export class AKVideoPlayer extends Component  {
                     this.event.emit(PlayerEvent.play);
                     break;
                 case PlayerCmdType.kBps:
-                   // if (this.playing) {
+                    if (this.playing) {
                         this.event.emit(PlayerEvent.kBps, msg.kBps);
-                        this._stats.kBps = msg.kBps;
-                    //}
+                    }
                     break;
-                case PlayerCmdType.buffing: {
-                    this.event.emit(PlayerEvent.buffing,msg.buffing)
-                    break;
-                }
                 case PlayerCmdType.duration:{
                     console.log("duration:",msg.duration);
                     this._stats.duration = msg.duration;
@@ -455,7 +441,7 @@ export class AKVideoPlayer extends Component  {
 
     }
     bufferedVideoFrame(msg){
-      //  const audioTs = this._audioPlayer.getTimestamp();
+        const audioTs = this._audioPlayer.getTimestamp();
         // if(msg.ts < audioTs - 500){
         //     return;
         // }
@@ -465,23 +451,22 @@ export class AKVideoPlayer extends Component  {
 
     displayVideoLoop(){
         if (this._videoFrameBuffer.length) {
-            if(this._opt.hasAudio){
-                var audioTs = this._audioPlayer.getTimestamp();
-                var audioOffset = audioTs;
-                if(this._audioFrameBuffer.length){
-                    audioOffset = Math.max(this._audioFrameBuffer[0].ts,audioTs);
-                } 
-            //  console.log("audioTs",audioTs,"video0",this._videoFrameBuffer[0].ts,this._videoFrameBuffer[0].ts <= audioOffset);
-                if (this._audioPlayer.quieting || this._videoFrameBuffer[0].ts <= audioOffset) {
-                    if (this._videoFrameBuffer[0].ts < audioTs - 400) {
-                        this._videoFrameBuffer.shift();
-                    }
-                }
-            }
-            if (this._videoFrameBuffer.length) {
+            var audioTs = this._audioPlayer.getTimestamp();
+            var audioOffset = audioTs;
+            if(this._audioFrameBuffer.length){
+              audioOffset = Math.max(this._audioFrameBuffer[0].ts,audioTs);
+            } 
+          //  console.log("audioTs",audioTs,"video0",this._videoFrameBuffer[0].ts,this._videoFrameBuffer[0].ts <= audioOffset);
+            if (this._audioPlayer.quieting || this._videoFrameBuffer[0].ts <= audioOffset) {
+              if (this._videoFrameBuffer[0].ts < audioTs - 400) {
+                this._videoFrameBuffer.shift();
+              }
+
+              if (this._videoFrameBuffer.length) {
+            //   console.log("renderVideo")
                 this.renderVideoFrame(this._videoFrameBuffer.shift());
+              }
             }
-            
         }
 
         if (this._audioFrameBuffer.length) {
@@ -546,7 +531,7 @@ export class AKVideoPlayer extends Component  {
         if(options.buf) this._stats.buf = options.buf;
         this.event.emit(PlayerEvent.stats, this._stats);
         this.event.emit(PlayerEvent.performance, this.fpsStatus(this._stats.fps));
-        this.event.emit(PlayerEvent.buffer, this.bufferStatus(this._stats.buf, this._opt.videoBufferTime * 1000));
+        this.event.emit(PlayerEvent.buffer, this.bufferStatus(this._stats.buf, this._opt.videoBuffer * 1000));
         this._stats.fps = 0;
         this._startBpsTime = _nowTime;
     }

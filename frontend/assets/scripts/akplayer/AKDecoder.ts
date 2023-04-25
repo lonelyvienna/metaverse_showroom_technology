@@ -110,8 +110,7 @@ export class AKDecoder implements IDecoder {
     remain= 0;
     channels= 0;
     videoFrameSize= 0;
-    videoBufferTime = 0;
-    dataBuffing = false;
+    videoBuffer = 0;
     firstTimestamp = 0;
     startTimestamp = 0;
     delay = 0;
@@ -132,7 +131,7 @@ export class AKDecoder implements IDecoder {
     fileSize = 0;
     fileSizeStart = 0;
     fileSizeOffset = 0;
-    fileSizeChunk = 65535*4;
+    fileSizeChunk = 65535;
     fileUrl = "";
     downloading = false;
     fileDispatch = null;
@@ -204,8 +203,8 @@ export class AKDecoder implements IDecoder {
                 }
                 
                 break
-            case "setVideoBufferTime":
-                this.videoBufferTime = (msg.time * 1000) | 0
+            case "setVideoBuffer":
+                this.videoBuffer = (msg.time * 1000) | 0
                 break
             case "close":
                 this.close()
@@ -404,39 +403,28 @@ export class AKDecoder implements IDecoder {
                     
                 }
             }else {
-                var data = this.bufferQueue[0];
-                var delayTime = this.getDelay(data.ts);
-                if (delayTime === -1) {
+                var data = this.bufferQueue[0]
+                if (this.getDelay(data.ts) === -1) {
                     this.bufferQueue.shift()
                     this.ts = data.ts;
                     var islast = (this.bufferQueue.length == 0 && this.speedSampler.isDone());
                     
                     data.decoder.decode(data.payload,data.ts,islast?1:0);
-                } else if (this.delay > this.videoBufferTime + 3000) {
+                } else if (this.delay > this.videoBuffer + 1000) {
                     this.dropping = true
                 } else {
-                    let buffing = true;
                     while (this.bufferQueue.length) {
-                        data = this.bufferQueue[0];
-                        delayTime = this.getDelay(data.ts);
-                        
-                        if (delayTime > this.videoBufferTime) {
+                        data = this.bufferQueue[0]
+                        if (this.getDelay(data.ts) > this.videoBuffer) {
                             this.bufferQueue.shift()
                             this.ts = data.ts;
                             var islast = (this.bufferQueue.length == 0 && this.speedSampler.isDone());
-                            buffing = false;
+                            
                             data.decoder.decode(data.payload,data.ts,islast?1:0);
                         } else {
-                            if(this.videoBufferTime - delayTime < 1000){
-                                buffing = false;
-                            }
                             break
                         }
                     }
-                    if(buffing != this.dataBuffing){
-                        this.sendMessage({cmd: "buffing",buffing:buffing});
-                    }
-                    this.dataBuffing = buffing;
                 }
             }
         }
@@ -655,7 +643,6 @@ export class AKDecoder implements IDecoder {
         this.startLoop();
         this.startSpeedSampler();
         this.isStream = true;
-        this.dataBuffing = false;
         if(fileSize){
             this.flvMode = true;
             this.isStream = false;

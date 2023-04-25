@@ -62,7 +62,7 @@ export class ThreadWorker implements IDecoder {
                         this.send(true, event.data);
                     };
                     this.worker.onerror = (event: ErrorEvent) => {
-                        this.send(false, event.message);
+                        this.send(false, event.error);
                     };
                 }
                

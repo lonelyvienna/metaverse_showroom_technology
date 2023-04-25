@@ -8,7 +8,7 @@ export enum ePlayerTexture {
 export const PlayerPostMessage = {
     close: "close",
     play: 'play',
-    setVideoBufferTime: 'setVideoBufferTime',
+    setVideoBuffer: 'setVideoBuffer',
     init: 'init',
     pause: 'pause',
     resume: 'resume',
@@ -31,7 +31,6 @@ export const PlayerCmdType = {
     duration: 'duration',
     playDone: 'playDone',
     seekingDone: 'seekingDone',
-    buffing: 'buffing',
 }
 
 export const PlayerEvent = {
@@ -54,7 +53,6 @@ export const PlayerEvent = {
     start: 'start',
     stop: 'stop',
     seekingDone: 'seekingDone',
-    buffing: 'buffing'
 }
 
 export const PlayerBufferStatus = {

@@ -51,17 +51,17 @@ export class GameManager {
         });
 
         // 模拟网络延迟 可通过 URL 参数 ?lag=200 设置延迟
-        let networkLag = parseInt(location.search.match(/\blag=(\d+)/)?.[1] || '0');
-        if (networkLag) {
-            client.flows.preRecvDataFlow.push(async v => {
-                await new Promise(rs => { setTimeout(rs, networkLag) })
-                return v;
-            });
-            client.flows.preSendDataFlow.push(async v => {
-                await new Promise(rs => { setTimeout(rs, networkLag) })
-                return v;
-            });
-        }
+        // let networkLag = parseInt(location.search.match(/\blag=(\d+)/)?.[1] || '0');
+        // if (networkLag) {
+        //     client.flows.preRecvDataFlow.push(async v => {
+        //         await new Promise(rs => { setTimeout(rs, networkLag) })
+        //         return v;
+        //     });
+        //     client.flows.preSendDataFlow.push(async v => {
+        //         await new Promise(rs => { setTimeout(rs, networkLag) })
+        //         return v;
+        //     });
+        // }
 
         (window as any).gm = this;
     }
