@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, tween, Vec3, Quat, UIOpacity } from 'cc';
+import { _decorator, Component, Node, tween, Vec3, Quat, UIOpacity, game } from 'cc';
 import { Facade } from '../../default/mvc/core/Facade';
 import HomeMediator from '../game/home/HomeMediator';
 import HomeView from '../game/home/HomeView';
@@ -12,6 +12,8 @@ export class RoomScene extends Component {
     public moveScreen!: Node;   //移动屏幕
 
     start() {
+
+        game.frameRate = 59;
 
         Facade.getInstance().openView(HomeMediator, HomeView, SceneUtil.sceneParams);
 
